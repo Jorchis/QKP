@@ -23,7 +23,9 @@ i=0
 """
 #while (the next line read in the file with the instances´ data is not equal to "EOF", that stands for "End Of File")
 while not Instances_data.readline()=="EOF":
-    #do
+
+    #IF ELSE that determines what line in the Instances_data file to assign to the Optimal and Instance_name variables,
+    #in case that i (the iteration variable) is an even number, the first 
     if(i%2==0):
         Optimal=Instances_data.readline().replace("\n", "")
         Instance_name=Instances_data.readline().replace("\n", "")
