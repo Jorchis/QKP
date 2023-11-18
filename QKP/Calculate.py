@@ -6,14 +6,24 @@ import time
 from Functions import *
 
 def Calculate(Instance_Path,optimal):
+#Function to implement the instance reader, heuristic application functions and returning the results to the main.py file's execution
+
+    #Variable that will store the number of elements in the instance that will be read
     n=0
+    #Variable that will store the number that points to the number that simbolized the constraint type
     Constraint_type=0
+    #List that will store a type Obj object, per item in the knapsack
     Objects = []
+    #Variable that will store the Knapsack weight capacity
     Knapsack_capacity=0
-    weights=0
+    #List that will store the weight of each item, each element will be assigned to it's respective item, and the list will be not used then
+    weights=[]
+    #Variable that will store the time that it takes to compute the solution of the processed instance
     COMPUTING_TIME=0
 
-    if os.path.exists(Instance_Path)==False: #if file does not exist or argument is not included
+    if os.path.exists(Instance_Path)==False:
+    #if file does not exist or argument is not included
+        #Let the user know that the file does not exist or argument is not included
         print(f"File does not exist")
     else:        
         COMPUTING_TIME=0
