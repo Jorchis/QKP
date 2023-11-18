@@ -52,7 +52,7 @@ def Calculate(Instance_Path,optimal):
             
         start_time = time.time() #TIME COUNT STARTS
                 
-        #Set 'S'
+        #S=The list with 
         S=heuristic(Objects, Knapsack_capacity)
         f_S=calculate_profit_given_packed_objects(S)
 
