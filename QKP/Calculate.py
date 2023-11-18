@@ -25,26 +25,34 @@ def Calculate(Instance_Path,optimal):
     #if file does not exist or argument is not included
         #Let the user know that the file does not exist or argument is not included
         print(f"File does not exist")
-    else:        
+    else:
+    #else
+
+        #Set Computing_Time=0
         COMPUTING_TIME=0
         
+        #Set list of values to an empty list, this list will contain the read instance data
         values=[]
         
         #sys.argv[0] is the argument given when calling the program Solver.py from the console:
         #the name of the file is Instance_Path
         #python Solver.py [file_name]
+
+        #Read the instance and save it in the 'values' list
         values = read_instance(Instance_Path)
         
+        #Assignment of the different elements in the 'values' list in 'n', 'Constraint_type', the 'Objects' list and 'Knapsack_capacity'
+        #
         n=values[0]
         Constraint_type=values[1]
         Objects=values[2]
         Knapsack_capacity=values[3]
-        Initial_solution=0
         
         #----------------------------------------------APPLYING A HEURISTIC------------------------------------------------------
             
         start_time = time.time() #TIME COUNT STARTS
                 
+        #Set 'S'
         S=heuristic(Objects, Knapsack_capacity)
         f_S=calculate_profit_given_packed_objects(S)
 
