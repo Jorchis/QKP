@@ -32,12 +32,14 @@ while not Instances_data.readline()=="EOF":
     else:
         Instance_name=Instances_data.readline().replace("\n", "")
         Optimal=Instances_data.readline().replace("\n", "")
+    
     Path=""
     Path="./Instances/" + Instance_name + ".txt"
+
+    #Append the results of the Instance processing in the Results_file file
     Results_file.write(Calculate(Path,Optimal)+"\n")
     i=i+1"""
 
-#
 Path="./Instances/Prueba.txt"
 Optimal="9566"
 print(Calculate(Path,Optimal),"\n")
